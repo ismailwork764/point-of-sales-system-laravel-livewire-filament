@@ -11,6 +11,9 @@ use App\Livewire\Sales\ListSales;
 use App\Livewire\Management\ListPaymentMethods;
 use App\Livewire\Items\EditItem;
 use App\Livewire\Items\EditInventory;
+use App\Livewire\Management\EditPaymentMethod;
+use App\Livewire\Management\EditUser;
+use App\Livewire\Customer\EditCustomer;
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,11 +44,15 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/manage-users', ListUsers::class)->name('users.index');
+    Route::get('/edit-user/{record}', EditUser::class)->name('user.update');
     Route::get('/manage-items', ListItems::class)->name('items.index');
     Route::get('/edit-item/{record}', EditItem::class)->name('item.update');
     Route::get('/manage-inventories', ListInventories::class)->name('inventories.index');
     Route::get('/edit-inventory/{record}', EditInventory::class)->name('inventory.update');
     Route::get('/manage-customers', ListCustomers::class)->name('customers.index');
+    Route::get('/edit-customer/{record}', EditCustomer::class)->name('customer.update');
     Route::get('/manage-sales', ListSales::class)->name('sales.index');
+    Route::get('edit-sale/{record}', EditItem::class)->name('sale.update');
     Route::get('/manage-payment-methods', ListPaymentMethods::class)->name('payment.method.index');
+    Route::get('/edit-payment-method/{record}', EditPaymentMethod::class)->name('payment.method.update');
 });

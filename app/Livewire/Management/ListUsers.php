@@ -45,6 +45,9 @@ class ListUsers extends Component implements HasActions, HasSchemas, HasTable
                 //
             ])
             ->recordActions([
+                Action::make('edit')
+                    ->url(fn (User $record): string => route('user.update', ['record' => $record->id]))
+                    ->label('Edit'),
                 Action::make('delete')
                     ->requiresConfirmation()
                     ->color('danger')

@@ -42,6 +42,9 @@ class ListSales extends Component implements HasActions, HasSchemas, HasTable
                 //
             ])
             ->recordActions([
+                /* Action::make('edit')
+                    ->url(fn (Sale $record): string => route('sale.update', ['record' => $record->id]))
+                    ->label('Edit'), */
                 Action::make('delete')
                     ->requiresConfirmation()
                     ->color('danger')
