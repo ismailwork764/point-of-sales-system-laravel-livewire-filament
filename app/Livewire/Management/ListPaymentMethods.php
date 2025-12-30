@@ -35,7 +35,9 @@ class ListPaymentMethods extends Component implements HasActions, HasSchemas, Ha
                 //
             ])
             ->headerActions([
-                //
+                Action::make('create')
+                    ->url(route('payment.method.create'))
+                    ->label('Create Payment Method')
             ])
             ->recordActions([
                 Action::make('edit')

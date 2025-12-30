@@ -41,7 +41,10 @@ class ListItems extends Component implements HasActions, HasSchemas, HasTable
                 //
             ])
             ->headerActions([
-                //
+                Action::make('create')
+                    ->url(route('item.create'))
+                    ->label('Create Item')
+                    ->color('primary'),
             ])
             ->recordActions([
 
