@@ -36,7 +36,10 @@ class ListInventories extends Component implements HasActions, HasSchemas, HasTa
                 //
             ])
             ->headerActions([
-                //
+                Action::make('create')
+                    ->url(route('inventory.create'))
+                    ->label('Create Inventory')
+                    ->color('primary'),
             ])
             ->recordActions([
                 Action::make('edit')

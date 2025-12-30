@@ -17,6 +17,8 @@ use Livewire\Component;
 use App\Models\Customer;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Actions\Action;
+use Filament\Notifications\Notification;
+
 
 class ListCustomers extends Component implements HasActions, HasSchemas, HasTable
 {
@@ -37,7 +39,10 @@ class ListCustomers extends Component implements HasActions, HasSchemas, HasTabl
                 //
             ])
             ->headerActions([
-                //
+                Action::make('create')
+                    ->url(route('customer.create'))
+                    ->label('Create Customer')
+                    ->color('primary'),
             ])
             ->recordActions([
                 Action::make('edit')
