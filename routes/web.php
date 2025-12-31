@@ -20,6 +20,7 @@ use App\Livewire\Items\CreateInventory;
 use App\Livewire\Customer\CreateCustomer;
 use App\Livewire\Management\CreateUser;
 use App\Livewire\Management\CreatePaymentMethod;
+use App\Livewire\POS;
 
 Route::get('/', function () {
     return view('welcome');
@@ -66,4 +67,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/manage-payment-methods', ListPaymentMethods::class)->name('payment.method.index');
     Route::get('/create-payment-method', CreatePaymentMethod::class)->name('payment.method.create');
     Route::get('/edit-payment-method/{record}', EditPaymentMethod::class)->name('payment.method.update');
+    Route::get('/pos', POS::class)->name('pos');
 });

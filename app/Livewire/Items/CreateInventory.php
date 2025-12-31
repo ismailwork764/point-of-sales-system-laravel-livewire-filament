@@ -38,6 +38,9 @@ class CreateInventory extends Component implements HasActions, HasSchemas
                         Select::make('item_id')
                             ->label('Item')
                             ->relationship('item', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->native(false)
                             ->required(),
 
                         TextInput::make('quantity')
