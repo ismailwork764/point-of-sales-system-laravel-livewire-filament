@@ -33,7 +33,7 @@
                             <h3 class="font-semibold text-gray-900 dark:text-gray-100 truncate">{{ $item->name }}</h3>
                             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">SKU: {{ $item->sku }}</p>
                             <p class="text-sm text-gray-700 dark:text-gray-300 mt-1 font-bold">
-                                $ {{ number_format($item->price, 2) }}
+                                MYR {{ number_format($item->price, 2) }}
                             </p>
                         </div>
                         <button wire:click="addToCart({{ $item->id }})" class="w-full py-3 bg-indigo-600 text-white font-bold transition-colors duration-200
@@ -57,7 +57,7 @@
                     <div class="flex-1">
                         <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-100">{{ $cartItem['name'] }}</h4>
                         <p class="text-xs text-gray-500 dark:text-gray-400">SKU: {{ $cartItem['sku'] }}</p>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">$ {{ number_format($cartItem['price'], 2) }} each</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">MYR {{ number_format($cartItem['price'], 2) }} each</p>
                     </div>
 
                     <div class="flex items-center space-x-2">
@@ -124,32 +124,32 @@
             <div class="mt-6 pt-6 border-t border-gray-200 dark:border-neutral-700">
                 <div class="flex justify-between items-center mb-2">
                     <span class="text-sm text-gray-600 dark:text-gray-400">Subtotal:</span>
-                    <span class="font-medium text-gray-800 dark:text-gray-100">$
+                    <span class="font-medium text-gray-800 dark:text-gray-100">MYR
                         {{ number_format($this->subTotal, 2) }}</span>
                 </div>
                 <div class="flex justify-between items-center mb-2">
                     <span class="text-sm text-gray-600 dark:text-gray-400">Tax (15%):</span>
-                    <span class="font-medium text-gray-800 dark:text-gray-100">$
+                    <span class="font-medium text-gray-800 dark:text-gray-100">MYR
                         {{ number_format($this->tax, 2) }}</span>
                 </div>
                 <div class="flex justify-between items-center mb-2">
                     <span class="text-sm text-gray-600 dark:text-gray-400">Total before discount:</span>
-                    <span class="font-medium text-gray-800 dark:text-gray-100">$
+                    <span class="font-medium text-gray-800 dark:text-gray-100">MYR
                         {{ number_format($this->totalBeforeDiscount, 2) }}</span>
                 </div>
                 <div class="flex justify-between items-center mb-2 text-red-500 dark:text-red-400">
                     <span class="text-sm font-semibold">Discount:</span>
-                    <span class="font-semibold">- $ {{ number_format($this->discount_amount, 2) }}</span>
+                    <span class="font-semibold">- MYR {{ number_format($this->discount_amount, 2) }}</span>
                 </div>
                 <div
                     class="flex justify-between items-center text-xl font-bold mt-2 border-t border-gray-200 dark:border-neutral-700 pt-2">
                     <span>Final Total:</span>
-                    <span>$ {{ number_format($this->total, 2) }}</span>
+                    <span>MYR {{ number_format($this->total, 2) }}</span>
                 </div>
                 <div
                     class="flex justify-between items-center text-lg font-bold mt-2 border-t border-gray-200 dark:border-neutral-700 pt-2">
                     <span>Change Given:</span>
-                    <span>$ {{ number_format($this->change, 2) }}</span>
+                    <span>MYR {{ number_format($this->change, 2) }}</span>
                 </div>
             </div>
         </div>
